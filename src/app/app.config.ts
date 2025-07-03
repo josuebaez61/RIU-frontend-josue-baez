@@ -12,12 +12,16 @@ import {
   withInterceptors,
 } from '@angular/common/http';
 import { loadingInterceptor } from './core';
+import { apiKeyInterceptor } from './core/interceptors/api-key.interceptor';
 
 export const appConfig: ApplicationConfig = {
   providers: [
     provideBrowserGlobalErrorListeners(),
     provideZonelessChangeDetection(),
     provideRouter(routes),
-    provideHttpClient(withFetch(), withInterceptors([loadingInterceptor])),
+    provideHttpClient(
+      withFetch(),
+      withInterceptors([loadingInterceptor, apiKeyInterceptor])
+    ),
   ],
 };
