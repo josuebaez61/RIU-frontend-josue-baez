@@ -1,0 +1,43 @@
+<div class="flex gap-4 mb-4">
+  <mat-form-field [subscriptSizing]="'dynamic'">
+    <mat-label>Search</mat-label>
+    <input
+      #searchInput
+      (keyup.enter)="searchHeros(searchInput.value)"
+      matInput
+      placeholder="Search heros by name"
+    />
+    <button
+      *ngIf="searchTerm"
+      matSuffix
+      mat-icon-button
+      aria-label="Clear"
+      (click)="resetSearch()"
+    >
+      <mat-icon matSuffix>clear</mat-icon>
+    </button>
+    <mat-icon matSuffix>search</mat-icon>
+  </mat-form-field>
+  <button routerLink="create" mat-fab extended>
+    <mat-icon>add</mat-icon>
+    Add Hero
+  </button>
+</div>
+<!--
+<app-heros-table
+  [loading]="heros.loading()"
+  [dataSource]="heros.pagination().data"
+  [length]="heros.pagination().items"
+  (page)="onPage($event)"
+  (editHero)="editHero($event)"
+  (deleteHero)="deleteHero($event)"
+/> -->
+
+<app-heros-table
+  [loading]="isLoading()"
+  [dataSource]="herosPagination.value()?.data || []"
+  [length]="herosPagination.value()?.items || 0"
+  (page)="onPage($event)"
+  (editHero)="editHero($event)"
+  (deleteHero)="deleteHero($event)"
+/>

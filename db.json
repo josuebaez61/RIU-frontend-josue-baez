@@ -1,0 +1,76 @@
+{
+  "heros": [
+    {
+      "id": "svc32",
+      "name": "SUPERMAN",
+      "alias": "Clark Kent",
+      "powers": [
+        "Invisibility",
+        "Telepathy",
+        "Shape-shifting"
+      ],
+      "origin": "Krypton"
+    },
+    {
+      "id": "svc33",
+      "name": "BATMAN",
+      "alias": "Bruce Wayne",
+      "powers": [
+        "Super Strength",
+        "Telepathy"
+      ],
+      "origin": "Gotham City"
+    },
+    {
+      "id": "svc34",
+      "name": "WONDER WOMAN",
+      "alias": "Diana Prince",
+      "powers": [
+        "Super strength",
+        "Flight",
+        "Combat skills"
+      ],
+      "origin": "Themyscira"
+    },
+    {
+      "id": "svc37",
+      "name": "AQUAMAN",
+      "alias": "Arthur Curry",
+      "powers": [
+        "Flight",
+        "Invisibility"
+      ],
+      "origin": "Atlantis"
+    },
+    {
+      "id": "svc38",
+      "name": "CYBORG",
+      "alias": "Victor Stone",
+      "powers": [
+        "Flight",
+        "Super Strength",
+        "Telekinesis"
+      ],
+      "origin": "Detroit"
+    },
+    {
+      "id": "svc43",
+      "name": "SHAZAM",
+      "alias": "Billy Batson",
+      "powers": [
+        "Enhanced Senses",
+        "Immortality"
+      ],
+      "origin": "Fawcett City"
+    },
+    {
+      "name": "TEST",
+      "alias": "test",
+      "origin": "test",
+      "powers": [
+        "Super Strength"
+      ],
+      "id": "xWOhT2w"
+    }
+  ]
+}
