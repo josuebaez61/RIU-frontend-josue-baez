@@ -39,7 +39,10 @@ export class Heros {
             prev: page > 1 ? page - 1 : null,
             next: page < Math.ceil(totalItems / perPage) ? page + 1 : null,
           };
-        })
+        }),
+        catchError((error) =>
+          throwError(() => new Error(error.message || 'Failed to fetch heroes'))
+        )
       );
   }
 

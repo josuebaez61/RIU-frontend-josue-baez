@@ -51,6 +51,9 @@ export class HerosTable {
   @Input()
   pageSize = 10;
 
+  @Input()
+  error: unknown = null;
+
   @Output()
   page = new EventEmitter<PageEvent>();
 

@@ -1,6 +1,7 @@
 {
   "name": "challenge-mindata-baez",
   "version": "0.0.0",
+  "author": "Josué Baez",
   "scripts": {
     "ng": "ng",
     "start": "ng serve",

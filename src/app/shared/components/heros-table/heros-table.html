@@ -1,3 +1,4 @@
+@if (!error) {
 <table mat-table [dataSource]="dataSource">
   <ng-container matColumnDef="id">
     <th mat-header-cell *matHeaderCellDef>Id</th>
@@ -45,9 +46,7 @@
   <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
   <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
 </table>
-
 <app-no-data [empty]="dataSource.length === 0" [loading]="loading" />
-
 <mat-paginator
   [length]="length"
   [pageSize]="pageSize"
@@ -55,3 +54,6 @@
   showFirstLastButtons
   (page)="page.emit($event)"
 />
+} @else {
+<p class="text-red-500">Error loading heros. Please try again later.</p>
+}

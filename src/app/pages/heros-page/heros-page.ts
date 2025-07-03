@@ -49,7 +49,14 @@ export class HerosPage {
       firstValueFrom(this.heros.getHeros(page, perPage, searchTerm)),
   });
 
+  error = computed(() => this.herosPagination.error());
   isLoading = computed(() => this.herosPagination.isLoading());
+  length = computed(() =>
+    this.herosPagination.hasValue() ? this.herosPagination.value()!.items : 0
+  );
+  data = computed(() =>
+    this.herosPagination.hasValue() ? this.herosPagination.value()!.data : []
+  );
 
   searchHeros(searchTerm: string): void {
     this.searchTerm.set(searchTerm);

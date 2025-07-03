@@ -6,7 +6,7 @@ import { SharedModule } from '../../shared';
   selector: 'app-main-layout',
   imports: [SharedModule, RouterOutlet],
   template: `
-    <mat-toolbar>Heros</mat-toolbar>
+    <mat-toolbar>Heros App</mat-toolbar>
     <main class="main-content p-4">
       <router-outlet></router-outlet>
     </main>
