@@ -7,4 +7,9 @@ export const routes: Routes = [
     component: MainLayout,
     loadChildren: () => import('./pages').then((m) => m.routes),
   },
+  {
+    path: '**',
+    pathMatch: 'full',
+    redirectTo: '',
+  },
 ];
