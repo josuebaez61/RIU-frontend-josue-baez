@@ -45,7 +45,7 @@ export class HerosPage {
       perPage: this.perPage(),
       searchTerm: this.searchTerm(),
     }),
-    loader: async ({ params: { page, perPage, searchTerm } }) =>
+    loader: ({ params: { page, perPage, searchTerm } }) =>
       firstValueFrom(this.heros.getHeros(page, perPage, searchTerm)),
   });
 

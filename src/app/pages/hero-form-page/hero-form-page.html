@@ -36,6 +36,9 @@
         {{ power }}
       </mat-option>
     </mat-select>
+    <mat-error *ngIf="heroForm.get('powers')?.hasError('required')">
+      Powers are required
+    </mat-error>
   </mat-form-field>
   <div class="col-span-6 flex justify-end gap-2">
     <button type="button" routerLink="/" mat-button>

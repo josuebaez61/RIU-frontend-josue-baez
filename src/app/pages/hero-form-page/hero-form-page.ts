@@ -64,7 +64,7 @@ export class HeroFormPage implements OnInit {
     name: new FormControl<string | null>(null, [Validators.required]),
     alias: new FormControl<string | null>(null, [Validators.required]),
     origin: new FormControl<string | null>(null, [Validators.required]),
-    powers: new FormControl<string[]>([]),
+    powers: new FormControl<string[]>([], Validators.required),
   });
   heros = inject(Heros);
 
