@@ -30,7 +30,7 @@ The API will be available at `http://localhost:3000`. For example:
 You can also run both the Angular development server and the JSON server simultaneously using:
 
 ```bash
-npm run start:dev
+npm run start
 ```
 
 This will start the Angular app on `http://localhost:4200` and the JSON server on `http://localhost:3000`.
@@ -111,7 +111,7 @@ npm run serve:json
 You can also run both the Angular development server and the `json-server` simultaneously using:
 
 ```bash
-npm run start:dev
+npm run start
 ```
 
 ## Additional Resources
