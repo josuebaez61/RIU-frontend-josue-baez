@@ -1,12 +1,12 @@
 import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
-import { SharedModule } from '../../shared';
+import { MatToolbarModule } from '@angular/material/toolbar';
 
 @Component({
   selector: 'app-main-layout',
-  imports: [SharedModule, RouterOutlet],
+  imports: [MatToolbarModule, RouterOutlet],
   template: `
-    <mat-toolbar>Heros App</mat-toolbar>
+    <mat-toolbar>Heros App By Josué Baez</mat-toolbar>
     <main class="main-content p-4">
       <router-outlet></router-outlet>
     </main>

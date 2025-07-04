@@ -8,20 +8,23 @@ import {
 } from '@angular/core';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
-import { HerosTable, SharedModule } from '../../shared';
+import { HerosTable } from '../../shared';
 import { Hero, Heros, Pagination } from '../../core';
 import { MatIconModule } from '@angular/material/icon';
 import { FormsModule } from '@angular/forms';
 import { PageEvent } from '@angular/material/paginator';
 import { Router, RouterLink } from '@angular/router';
 import { firstValueFrom } from 'rxjs';
+import { CommonModule } from '@angular/common';
+import { MatButtonModule } from '@angular/material/button';
 
 @Component({
   selector: 'app-home-page',
   imports: [
-    SharedModule,
+    CommonModule,
     RouterLink,
     FormsModule,
+    MatButtonModule,
     HerosTable,
     MatFormFieldModule,
     MatIconModule,
