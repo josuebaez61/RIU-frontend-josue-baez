@@ -48,7 +48,7 @@ describe('HerosPage', () => {
 
   it('should reset searchTerm signal when resetSearch is called', () => {
     component.searchTerm.set('Superman');
-    component.resetSearch();
+    component.clearSearch();
     expect(component.searchTerm()).toBe('');
   });
 

@@ -5,16 +5,17 @@ import {
   ReactiveFormsModule,
   Validators,
 } from '@angular/forms';
+import { CommonModule } from '@angular/common';
 import { MatButtonModule } from '@angular/material/button';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatIconModule } from '@angular/material/icon';
 import { MatSelectModule } from '@angular/material/select';
 import { MatInputModule } from '@angular/material/input';
+import { MatCardModule } from '@angular/material/card';
 import { ActivatedRoute, Router, RouterLink } from '@angular/router';
-import { Hero, Heros } from '../../core';
-import { CommonModule } from '@angular/common';
-import { UppercaseValue } from '../../shared';
 import { Observable } from 'rxjs';
+import { Hero, Heros } from '../../core';
+import { UppercaseValue } from '../../shared';
 
 @Component({
   selector: 'app-hero-form-page',
@@ -28,6 +29,7 @@ import { Observable } from 'rxjs';
     MatIconModule,
     MatSelectModule,
     RouterLink,
+    MatCardModule,
   ],
   templateUrl: './hero-form-page.html',
   styles: ``,
@@ -73,6 +75,8 @@ export class HeroFormPage implements OnInit {
 
   editingHero = signal<Hero | null>(null);
 
+  isEditing = false;
+
   constructor() {
     effect(() => {
       const editingHero = this.editingHero();
@@ -97,6 +101,7 @@ export class HeroFormPage implements OnInit {
   ngOnInit(): void {
     const id = this.activatedRoute.snapshot.paramMap.get('id');
     if (id) {
+      this.isEditing = true;
       this.heros.getHeroById(id).subscribe({
         next: (hero) => {
           this.editingHero.set(hero);

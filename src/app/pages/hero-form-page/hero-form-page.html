@@ -1,53 +1,64 @@
-<form
-  [formGroup]="heroForm"
-  (ngSubmit)="onSubmit()"
-  class="grid grid-cols-6 gap-2 w-1/2"
->
-  <mat-form-field class="col-span-3">
-    <mat-label>Hero Name</mat-label>
-    <input
-      appUppercaseValue
-      formControlName="name"
-      matInput
-      placeholder="Hero Name"
-    />
-    <mat-error *ngIf="heroForm.get('name')?.hasError('required')">
-      Hero Name is required
-    </mat-error>
-  </mat-form-field>
-  <mat-form-field class="col-span-3">
-    <mat-label>Alias</mat-label>
-    <input formControlName="alias" matInput placeholder="Alias" />
-    <mat-error *ngIf="heroForm.get('alias')?.hasError('required')">
-      Alias is required
-    </mat-error>
-  </mat-form-field>
-  <mat-form-field class="col-span-4">
-    <mat-label>Origin</mat-label>
-    <input formControlName="origin" matInput placeholder="Origin" />
-    <mat-error *ngIf="heroForm.get('origin')?.hasError('required')">
-      Origin is required
-    </mat-error>
-  </mat-form-field>
-  <mat-form-field class="col-span-2">
-    <mat-label>Powers</mat-label>
-    <mat-select formControlName="powers" multiple>
-      <mat-option *ngFor="let power of powerOptions" [value]="power">
-        {{ power }}
-      </mat-option>
-    </mat-select>
-    <mat-error *ngIf="heroForm.get('powers')?.hasError('required')">
-      Powers are required
-    </mat-error>
-  </mat-form-field>
-  <div class="col-span-6 flex justify-end gap-2">
-    <button type="button" routerLink="/" mat-button>
-      <mat-icon>arrow_back</mat-icon>
-      Cancel
-    </button>
-    <button type="submit" mat-flat-button>
-      <mat-icon>save</mat-icon>
-      Save Hero
-    </button>
-  </div>
-</form>
+<div class="max-w-lg mx-auto">
+  <mat-card>
+    <mat-card-header>
+      <mat-card-title>{{
+        isEditing ? "Edit Hero" : "Add Hero"
+      }}</mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+      <form
+        [formGroup]="heroForm"
+        (ngSubmit)="onSubmit()"
+        class="grid grid-cols-6 gap-2 pt-4"
+      >
+        <mat-form-field class="col-span-6 md:col-span-3">
+          <mat-label>Hero Name</mat-label>
+          <input
+            appUppercaseValue
+            formControlName="name"
+            matInput
+            placeholder="Hero Name"
+          />
+          <mat-error *ngIf="heroForm.get('name')?.hasError('required')">
+            Hero Name is required
+          </mat-error>
+        </mat-form-field>
+        <mat-form-field class="col-span-6 md:col-span-3">
+          <mat-label>Alias</mat-label>
+          <input formControlName="alias" matInput placeholder="Alias" />
+          <mat-error *ngIf="heroForm.get('alias')?.hasError('required')">
+            Alias is required
+          </mat-error>
+        </mat-form-field>
+        <mat-form-field class="col-span-6 md:col-span-4">
+          <mat-label>Origin</mat-label>
+          <input formControlName="origin" matInput placeholder="Origin" />
+          <mat-error *ngIf="heroForm.get('origin')?.hasError('required')">
+            Origin is required
+          </mat-error>
+        </mat-form-field>
+        <mat-form-field class="col-span-6 md:col-span-2">
+          <mat-label>Powers</mat-label>
+          <mat-select formControlName="powers" multiple>
+            <mat-option *ngFor="let power of powerOptions" [value]="power">
+              {{ power }}
+            </mat-option>
+          </mat-select>
+          <mat-error *ngIf="heroForm.get('powers')?.hasError('required')">
+            Powers are required
+          </mat-error>
+        </mat-form-field>
+        <div class="col-span-6 flex justify-end gap-2">
+          <button type="button" routerLink="/" mat-button>
+            <mat-icon>arrow_back</mat-icon>
+            Cancel
+          </button>
+          <button type="submit" mat-flat-button>
+            <mat-icon>save</mat-icon>
+            Save Hero
+          </button>
+        </div>
+      </form>
+    </mat-card-content>
+  </mat-card>
+</div>

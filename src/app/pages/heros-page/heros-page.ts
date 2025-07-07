@@ -61,17 +61,20 @@ export class HerosPage {
     this.herosPagination.hasValue() ? this.herosPagination.value()!.data : []
   );
 
-  searchHeros(searchTerm: string): void {
-    this.searchTerm.set(searchTerm);
-  }
+  searchInputValue = '';
 
   onPage(ev: PageEvent) {
     this.page.set(ev.pageIndex + 1);
     this.perPage.set(ev.pageSize);
   }
 
-  resetSearch(): void {
-    this.searchTerm.set('');
+  clearSearch(): void {
+    this.searchInputValue = '';
+    this.searchHeroes();
+  }
+
+  searchHeroes(): void {
+    this.searchTerm.set(this.searchInputValue);
   }
 
   deleteHero(id: string): void {
