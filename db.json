@@ -62,15 +62,6 @@
         "Immortality"
       ],
       "origin": "Fawcett City"
-    },
-    {
-      "name": "TEST",
-      "alias": "test",
-      "origin": "test",
-      "powers": [
-        "Super Strength"
-      ],
-      "id": "xWOhT2w"
     }
   ]
 }

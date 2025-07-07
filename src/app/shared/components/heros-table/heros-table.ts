@@ -6,6 +6,7 @@ import { MatPaginatorModule, PageEvent } from '@angular/material/paginator';
 import { MatIconModule } from '@angular/material/icon';
 import { Hero } from '../../../core';
 import { NoData } from '../no-data';
+import Swal from 'sweetalert2';
 
 export type HeroTableColumns = (
   | 'name'
@@ -64,8 +65,17 @@ export class HerosTable {
   editHero = new EventEmitter<string>();
 
   onDeleteHero(id: string): void {
-    if (confirm('Are you sure you want to delete this hero?')) {
-      this.deleteHero.emit(id);
-    }
+    Swal.fire({
+      title: 'Are you sure?',
+      text: 'You will not be able to recover this hero!',
+      icon: 'warning',
+      showCancelButton: true,
+      cancelButtonText: 'Cancel',
+      confirmButtonText: 'Confirm',
+    }).then((result) => {
+      if (result.isConfirmed) {
+        this.deleteHero.emit(id);
+      }
+    });
   }
 }

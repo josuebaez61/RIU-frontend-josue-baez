@@ -17,7 +17,6 @@ import { Router, RouterLink } from '@angular/router';
 import { firstValueFrom } from 'rxjs';
 import { CommonModule } from '@angular/common';
 import { MatButtonModule } from '@angular/material/button';
-
 @Component({
   selector: 'app-home-page',
   imports: [
