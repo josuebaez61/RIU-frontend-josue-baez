@@ -6,11 +6,21 @@ import { MatToolbarModule } from '@angular/material/toolbar';
   selector: 'app-main-layout',
   imports: [MatToolbarModule, RouterOutlet],
   template: `
-    <mat-toolbar>Heros App By Josué Baez</mat-toolbar>
+    <mat-toolbar class="main-toolbar">Heros App By Josué Baez</mat-toolbar>
     <main class="main-content p-4">
       <router-outlet></router-outlet>
     </main>
   `,
-  styles: ``,
+  styles: `
+  @use '@angular/material' as mat;
+
+  .main-toolbar {
+    @include mat.toolbar-overrides(
+      (
+        container-background-color: var(--mat-sys-primary-container),
+      )
+    );
+  }
+`,
 })
 export class MainLayout {}

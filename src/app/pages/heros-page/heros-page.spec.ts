@@ -41,8 +41,9 @@ describe('HerosPage', () => {
     expect(component).toBeTruthy();
   });
 
-  it('should update searchTerm signal when searchHeros is called', () => {
-    component.searchHeros('Batman');
+  it('should update searchTerm signal when searchHeroes is called', () => {
+    component.searchInputValue = 'Batman';
+    component.searchHeroes();
     expect(component.searchTerm()).toBe('Batman');
   });
 
